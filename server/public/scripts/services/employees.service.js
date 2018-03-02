@@ -1,4 +1,4 @@
-app.service('EmployeeService as es', ['$http', function($http) {
+app.service('EmployeeService', ['$http', function($http) {
     let self = this;
 
     self.test = 'Hi hi hi'
@@ -18,7 +18,9 @@ app.service('EmployeeService as es', ['$http', function($http) {
         }); // END $http
     } // END self.getAllEmployees
 
-    self.addEmployee = () => {
+    self.addEmployee = function() {
+        console.log('in self.addEmployee');
+        
         $http({
             method: 'POST',
             url: '/employees',

@@ -1,7 +1,7 @@
-app.controller('TrackController as tc', ['es', function(es){
+app.controller('TrackController', ['EmployeeService', function(EmployeeService){
     let self = this;
 
-    console.log(es.test);
-    self.allEmployees = es.allEmployees
+    console.log(EmployeeService.test);
+    self.allEmployees = EmployeeService.allEmployees
 
 }]); // END TrackController
