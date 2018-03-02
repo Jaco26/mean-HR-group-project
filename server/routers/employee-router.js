@@ -55,6 +55,25 @@ router.post('/', (request, response) => {
       })
   });
 
+  router.put('/:id', (request, response) => {
+    let id = request.params.id;
+    console.log('THIS IS the ID in router.PuT', id);
+    
+    let updatedEmployee = request.body;
+    Employee.findByIdAndUpdate(
+      {"_id": id},
+      {$set: updatedEmployee},
+      (error, success) => {
+        if(error){
+          console.log('Error in router.put', error);
+          response.sendStatus(500);          
+        } else {
+          response.sendStatus(200);
+        }
+      }
+    )
+  })
+
 
 
 

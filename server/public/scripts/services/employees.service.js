@@ -12,6 +12,9 @@ app.service('EmployeeService', ['$http', function($http) {
             url: '/employees'
         }).then( (response) => {
             self.allEmployees.list = response.data; // Make self.allEmployees equal to the GET response.data           
+            for(employee in self.allEmployees.list){
+                employee.beingEdited = false;
+            }  
             console.log(self.allEmployees);
         }).catch( (error) => {
             console.log('error in self.getAllEmployees:', error);
@@ -33,13 +36,13 @@ app.service('EmployeeService', ['$http', function($http) {
         }); // END $http
     } // END self.addEmployee
 
-    self.editEmployee = () => {
-        const id = self.editedEmployee.id
-        const updatedInfo = self.editedEmployee;
+    self.submitEditEmployee = (employee) => {
+        const id = employee._id
+        const updatedEmployee = employee;
         $http({
             method: 'PUT',
-            url: '/employees/'+id,
-            data: updatedInfo,
+            url: `/employees/${id}`,
+            data: updatedEmployee,
         }).then( (response) => {
             console.log('Edited employee', response);
             self.editedEmployee = {}; // reset self.editedEmployee to empty object
