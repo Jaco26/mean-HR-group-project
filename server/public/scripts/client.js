@@ -1,6 +1,9 @@
+console.log('hello from the client side')
 const app = angular.module('myApp', ['ngRoute']);
+console.log('angular')
 
 app.config(function($routeProvider){
+    console.log('whatever in the routing');
     $routeProvider.when('/add', {
         templateUrl: 'views/add.html',
         controller: 'AddController as ac'
@@ -12,5 +15,5 @@ app.config(function($routeProvider){
         controller: 'TrackController as tc'
     }).otherwise('/', {
         templateUrl: 'view/home.html'
-    })
+    });
 });
