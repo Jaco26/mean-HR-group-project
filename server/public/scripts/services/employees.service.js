@@ -1,6 +1,7 @@
-myApp.service('EmployeeService as ES', ['$http', function($http) {
+app.service('EmployeeService as es', ['$http', function($http) {
     let self = this;
 
+    self.test = 'Hi hi hi'
     self.allEmployees = []; // Populate with successful response from self.getAllEmployees
     self.newEmployee = {}; // Link to add.employee controller and view. It will be populated by inputs that ng-model it.
     self.editedEmployee = {}; // This will be populated by the inputs in the employee-edit form
