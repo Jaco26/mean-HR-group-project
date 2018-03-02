@@ -6,7 +6,7 @@ app.controller('AddController', ['EmployeeService', function(EmployeeService){
     self.addEmployee = EmployeeService.addEmployee;
     self.getAllEmployees = EmployeeService.getAllEmployees;
     // self.allEmployees = EmployeeService.allEmployees
-
+    
 
 
     // ON LOAD

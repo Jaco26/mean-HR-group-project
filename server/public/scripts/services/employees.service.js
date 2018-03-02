@@ -52,7 +52,7 @@ app.service('EmployeeService', ['$http', function($http) {
     self.deleteEmployee = (employee) => {
         $http({
             method: 'DELETE',
-            url: '/employees/'+employee.id,
+            url: '/employees/'+employee._id,
         }).then( (response) => {
             console.log('Deleted employee', response);
             self.getAllEmployees();
