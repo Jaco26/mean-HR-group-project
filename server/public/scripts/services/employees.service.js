@@ -2,7 +2,7 @@ app.service('EmployeeService', ['$http', function($http) {
     let self = this;
 
     self.test = 'Hi hi hi'
-    self.allEmployees = []; // Populate with successful response from self.getAllEmployees
+    self.allEmployees = {list: []}; // Populate with successful response from self.getAllEmployees
     self.newEmployee = {}; // Link to add.employee controller and view. It will be populated by inputs that ng-model it.
     self.editedEmployee = {}; // This will be populated by the inputs in the employee-edit form
 
@@ -11,7 +11,7 @@ app.service('EmployeeService', ['$http', function($http) {
             method: 'GET',
             url: '/employees'
         }).then( (response) => {
-            self.allEmployees = response.data; // Make self.allEmployees equal to the GET response.data           
+            self.allEmployees.list = response.data; // Make self.allEmployees equal to the GET response.data           
             console.log(self.allEmployees);
         }).catch( (error) => {
             console.log('error in self.getAllEmployees:', error);
@@ -60,6 +60,5 @@ app.service('EmployeeService', ['$http', function($http) {
             console.log('error in self.deleteEmployee', error);            
         }); // END $http
     } // END self.deleteEmployee
-
 
 }]); // END EmployeeService

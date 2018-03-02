@@ -5,6 +5,7 @@ app.controller('AddController', ['EmployeeService', function(EmployeeService){
     self.newEmployee = EmployeeService.newEmployee;
     self.addEmployee = EmployeeService.addEmployee;
     self.getAllEmployees = EmployeeService.getAllEmployees;
+    // self.allEmployees = EmployeeService.allEmployees
 
 
 
