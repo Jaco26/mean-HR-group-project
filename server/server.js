@@ -23,7 +23,8 @@ mongoose.connection.on('error', function (error) {
 mongoose.connect(databaseUrl);
 
 // ROUTER PUT IT INNNNN N N N N NN N N~!N!N!N!N!N!!!!!!!D OOOOOO IIIIIITTTTTTT
-
+const employeeRouter = require('./routers/employee-router');
+app.use('/employees', employeeRouter);
 
 
 
