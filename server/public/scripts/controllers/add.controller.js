@@ -4,6 +4,12 @@ app.controller('AddController', ['EmployeeService', function(EmployeeService){
     let self = this; 
     self.newEmployee = EmployeeService.newEmployee;
     self.addEmployee = EmployeeService.addEmployee;
-    console.log(EmployeeService.test);
+    self.getAllEmployees = EmployeeService.getAllEmployees;
+
+
+
+    // ON LOAD
+    self.getAllEmployees();
+    
     
 }]);

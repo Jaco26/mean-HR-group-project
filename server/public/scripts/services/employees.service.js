@@ -11,8 +11,8 @@ app.service('EmployeeService', ['$http', function($http) {
             method: 'GET',
             url: '/employees'
         }).then( (response) => {
-            console.log(response.data);
             self.allEmployees = response.data; // Make self.allEmployees equal to the GET response.data           
+            console.log(self.allEmployees);
         }).catch( (error) => {
             console.log('error in self.getAllEmployees:', error);
         }); // END $http
